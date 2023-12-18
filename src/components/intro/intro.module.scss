@@ -1,0 +1,36 @@
+.root {
+    padding: 6rem 0rem 0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.button {
+    background-image: linear-gradient(90deg, #5F2D77 0%, #161616 100%);
+    margin: 1rem 0rem 0rem;
+    background-color: transparent;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-position: 0% 0%;
+    background-size: auto auto;
+    background-attachment: scroll;
+    background-repeat: repeat;
+}
+
+.iconSend {
+    transform: rotate(-45deg) scale(1.1);
+    margin-left: 0.4rem;
+    margin-right: 0px;
+    display: block;
+}
+
+.subtitle {
+    margin-top: 0rem;
+}
+
+.desription {
+    margin-top: 0.6rem;
+}

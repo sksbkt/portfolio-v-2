@@ -1,0 +1,27 @@
+[
+    {
+        "name": "react icons",
+        "components": [
+            {
+                "filePath": "react-icons/fa6",
+                "exportName": "FaShuttleSpace",
+                "name": "FaShuttleSpace"
+            },
+            {
+                "filePath": "react-icons/fa",
+                "exportName": "FaInstagram",
+                "name": "FaInstagram"
+            },
+            {
+                "filePath": "react-icons/fa",
+                "exportName": "FaLinkedin",
+                "name": "FaLinkedin"
+            },
+            {
+                "filePath": "react-icons/fa",
+                "exportName": "FaGithub",
+                "name": "FaGithub"
+            }
+        ]
+    }
+]
