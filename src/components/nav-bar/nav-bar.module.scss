@@ -1,2 +1,66 @@
 .root {
+
+    margin: 1rem;
+    align-items: center;
+    flex-direction: row;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    gap: 1em;
+    width: 100%;
+    margin: 0rem;
+    justify-content: space-around;
+}
+
+.logo {}
+
+.logoWrapper {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+
+    img {
+
+        width: 2rem;
+        height: 2rem;
+    }
+
+    p {
+        font-weight: 700;
+        color: #494949;
+    }
+
+    gap:5px;
+}
+
+.navBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+
+    li {
+        text-decoration: none;
+        list-style-type: none;
+    }
+
+    gap:1em;
+}
+
+@media screen and (max-width:720px) {
+    .nav {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .navBar {
+        width: 100%;
+
+    }
 }

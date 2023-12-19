@@ -1,3 +1,4 @@
+
 .root {}
 
 .portfolio-wrapper {}
@@ -17,6 +18,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 12px;
+    margin-top: 2em;
 }
 
 .grid-item {
@@ -29,7 +31,8 @@
     min-width: auto;
 }
 
-.visit-portfolio {}
+.visit-portfolio {
+}
 
 .grid-img {
 
@@ -39,7 +42,7 @@
 
 .grid-img-div {
     border-radius: 12px;
-    box-shadow: 0 0 5px #BCBCBC;
+    box-shadow: 0 0 7px #BCBCBC;
     object-fit: cover;
     overflow: hidden;
     display: flex;
@@ -62,4 +65,8 @@
     fill: red($color: #371A45);
     width: 1.5rem;
     height: 1.5rem;
+}
+
+.gridItemTitle {
+    text-decoration: none;
 }

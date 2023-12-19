@@ -3,6 +3,7 @@ import styles from './intro.module.scss';
 import { FaShuttleSpace } from 'react-icons/fa6';
 import { Animation } from '../animation/animation';
 import { motion } from 'framer-motion';
+import { Portfolio } from '../portfolio/portfolio';
 export interface IntroProps {
     className?: string;
 }
@@ -56,6 +57,7 @@ export const Intro = ({ className }: IntroProps) => {
                 <FaShuttleSpace className={styles.iconSend} />
             </button>
             <Animation />
+            <Portfolio />
         </div>
     );
 };

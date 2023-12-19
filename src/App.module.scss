@@ -71,7 +71,18 @@
 
 @media screen and (max-width:720px ) {
     .App{
-        padding: 0rem 4%;
+        padding: 1rem 4%;
     }
     
+}
+
+a{
+    text-decoration: none !important;
+    color: #494949 !important;
+    transition: all 0.3s;
+    &:hover{
+        transform: translate(0, -2px);
+        filter: saturate(2);
+    }
+
 }

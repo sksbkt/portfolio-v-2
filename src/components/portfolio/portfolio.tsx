@@ -70,7 +70,7 @@ export const Portfolio = ({ className }: PortfolioProps) => {
                             href="https://quantic-shop.netlify.app/"
                             target="_blank"
                         >
-                            <h4>Sample portfolio project</h4>
+                            <h4>Online shop</h4>
                         </a>
                     </div>
                     <div className={styles['grid-item']}>
@@ -82,7 +82,7 @@ export const Portfolio = ({ className }: PortfolioProps) => {
                             href="https://promptopia-quantic.vercel.app/"
                             target="_blank"
                         >
-                            <h4>Sample portfolio project</h4>
+                            <h4>Blog</h4>
                         </a>
                     </div>
                     <div className={styles['grid-item']}>
@@ -94,7 +94,7 @@ export const Portfolio = ({ className }: PortfolioProps) => {
                             href="https://quantic-dashboard.vercel.app/"
                             target="_blank"
                         >
-                            <h4>Sample portfolio project</h4>
+                            <h4>Dashboard</h4>
                         </a>
                     </div>
                     <div className={styles['grid-item']}>
@@ -106,16 +106,24 @@ export const Portfolio = ({ className }: PortfolioProps) => {
                             href="https://quantic-swrtodo.netlify.app/"
                             target="_blank"
                         >
-                            <h4>Sample portfolio project</h4>
+                            <h4>SWR todo</h4>
                         </a>
                     </div>
                 </div>
                 <div className={styles.socials}>
-                    <FaGithub className={styles['social-svg']} />
-                    <FaInstagram className={styles['social-svg']} />
-                    <FaLinkedin className={styles['social-svg']} />
+                    <a href="https://github.com/sksbkt" target="_blank">
+                        <FaGithub className={styles['social-svg']} />
+                    </a>
+                    <a href="https://github.com/sksbkt" target="_blank">
+                        <FaInstagram href="/" className={styles['social-svg']} />
+                    </a>
+                    <a href="https://github.com/sksbkt" target="_blank">
+                        <FaLinkedin
+                            href="https://www.linkedin.com/in/ali-khoshbakht/"
+                            className={styles['social-svg']}
+                        />
+                    </a>
                 </div>
-            </div>
-        </div>
+            </div></div>
     );
 };
