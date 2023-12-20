@@ -5,6 +5,7 @@ import { Intro } from './components/intro/intro';
 import { Portfolio } from './components/portfolio/portfolio';
 import { NavBar } from './components/nav-bar/nav-bar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { ContactForm } from './components/contact-form/contact-form';
 
 function App() {
     return (
@@ -12,8 +13,8 @@ function App() {
             <NavBar />
             <Routes>
                 <Route path="/" element={<Intro />} />
-            </Routes>
-        </div>
+                <Route path="/contact" element={<ContactForm />} />
+            </Routes></div>
     );
 }
 

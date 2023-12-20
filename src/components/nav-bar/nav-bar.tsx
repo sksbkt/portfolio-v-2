@@ -25,7 +25,7 @@ export const NavBar = ({ className }: NavBarProps) => {
                     <Link to={'/'}>Portfolio</Link>
                 </li>
                 <li>
-                    <Link to={'/'}>Contact</Link>
+                    <Link to={'/contact'}>Contact</Link>
                 </li>
             </nav>
         </div>

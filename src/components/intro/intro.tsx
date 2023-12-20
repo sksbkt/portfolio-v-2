@@ -4,6 +4,7 @@ import { FaShuttleSpace } from 'react-icons/fa6';
 import { Animation } from '../animation/animation';
 import { motion } from 'framer-motion';
 import { Portfolio } from '../portfolio/portfolio';
+import { Link } from 'react-router-dom';
 export interface IntroProps {
     className?: string;
 }
@@ -52,10 +53,12 @@ export const Intro = ({ className }: IntroProps) => {
             <p className={styles.desription}>
                 Free lance providing services for programming and design context needs.
             </p>
-            <button className={styles.button}>
-                Lets collaborate
-                <FaShuttleSpace className={styles.iconSend} />
-            </button>
+            <Link
+                className={styles.letCollab}
+                to={'/contact'}
+            >
+                <h3>Lets collaborate</h3><FaShuttleSpace className={styles.iconSend} />
+            </Link>
             <Animation />
             <Portfolio />
         </div>

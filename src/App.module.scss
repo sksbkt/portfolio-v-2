@@ -77,8 +77,8 @@
 }
 
 a{
-    text-decoration: none !important;
-    color: #494949 !important;
+    text-decoration: none;
+    color: #494949;
     transition: all 0.3s;
     &:hover{
         transform: translate(0, -2px);
