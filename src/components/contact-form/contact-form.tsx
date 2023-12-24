@@ -4,6 +4,7 @@ import styles from './contact-form.module.scss';
 import formSubmittedAnimation from '../../assets/form-sumbit_1.json';
 import React, { useEffect, useState } from 'react';
 import Lottie, { LottiePlayer } from 'lottie-react';
+import { Button } from '@mui/material';
 
 export interface ContactFormProps {
     className?: string;
@@ -80,8 +81,10 @@ export const ContactForm = ({ className }: ContactFormProps) => {
                             className={classNames(styles.formInputMsg)}
                         />
                     </div>
-
-                    <input type="submit" value="Submit" className={styles.formBtn} />
+                    <Button type='submit' variant='outlined'>
+                        Submit
+                    </Button>
+                    {/* <input type="submit" value="Submit" className={styles.formBtn} /> */}
                 </form>
             </div>
         }
