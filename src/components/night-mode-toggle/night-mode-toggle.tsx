@@ -1,8 +1,7 @@
-import classNames from 'classnames';
-import styles from './night-mode-toggle.module.scss';
-import { Box, IconButton } from '@mui/material';
+import { Button, Container, IconButton } from '@mui/material';
 import { useThemeContext } from '../../theme/ThemeContextProvider';
-
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from '@mui/icons-material/LightMode';
 export interface NightModeToggleProps {
     className?: string;
 }
@@ -12,23 +11,16 @@ export interface NightModeToggleProps {
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
 export const NightModeToggle = ({ className }: NightModeToggleProps) => {
-    const { mode, toggleColorMode } = useThemeContext();
+    const { mode, ltr, toggleColorMode, toggleLtr } = useThemeContext();
     return (
-        <Box sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            bgcolor: 'Background.default',
-            color: 'text.primary',
-            borderColor: 'text.primary',
-            border: '1px solid',
-            borderRadius: 25,
-            p: 2
-        }}>
-            {mode} mode
-            <IconButton sx={{ ml: 1 }} onClick={toggleColorMode} color='inherit'>
-                {mode === 'dark' ? 'Dark' : 'Light'}
+        <Container sx={{ display: 'flex', flexDirection: 'row' }}>
+            <IconButton sx={{ ml: 1, borderWidth: 1, fontSize: 12, borderRadius: 10, outline: 'none', gap: 1 }} onClick={toggleColorMode} color='inherit'>
+                {mode} mode {mode === 'dark' ? <DarkModeIcon /> : <LightModeIcon />}
             </IconButton>
-        </Box>
+            <Button variant='text' onClick={toggleLtr}>
+                {ltr ? 'EN' : 'FA'}
+
+            </Button>
+        </Container>
     );
 };

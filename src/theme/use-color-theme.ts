@@ -3,8 +3,10 @@ import { useMemo, useState } from 'react';
 import theme, { getDesignTokens } from './theme';
 export const useColorTheme = () => {
     const [mode, setMode] = useState<PaletteMode>('light');
+    const [ltr, setLtr] = useState<boolean>(true);
 
     const toggleColorMode = () => setMode((preMode) => (preMode === 'light' ? 'dark' : 'light'));
+    const toggleLtr = () => setLtr((preMode) => !preMode);
 
     // const modifiedTheme = useMemo(
     //     () =>
@@ -22,10 +24,16 @@ export const useColorTheme = () => {
     //     mode,
     //     toggleColorMode,
     // };
-    const modifiedTheme = useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
+    const modifiedTheme = useMemo(() => createTheme(getDesignTokens(mode, ltr)), [mode, ltr]);
+    console.log(getDesignTokens(mode, ltr));
+
     return {
         theme: modifiedTheme,
+
         mode,
         toggleColorMode,
+
+        ltr,
+        toggleLtr,
     };
 };

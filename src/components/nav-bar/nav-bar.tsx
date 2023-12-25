@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import styles from './nav-bar.module.scss';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo_light.png';
+import { NightModeToggle } from '../night-mode-toggle/night-mode-toggle';
 
 export interface NavBarProps {
     className?: string;
@@ -20,7 +21,9 @@ export const NavBar = ({ className }: NavBarProps) => {
                     <p className={styles.logo}>Quantic Machines</p>
                 </div>
             </Link>
+
             <nav className={styles.navBar}>
+                <NightModeToggle />
                 <li>
                     <Link to={'/'}>Portfolio</Link>
                 </li>

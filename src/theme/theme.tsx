@@ -1,16 +1,31 @@
 import { createTheme } from "@mui/material/styles";
 import { amber, blue, deepOrange, grey, red } from "@mui/material/colors";
 import { PaletteMode } from "@mui/material";
+import { Palette } from "@mui/icons-material";
 
-const theme = createTheme({ palette: { primary: blue } });
-
-export const getDesignTokens = (mode: PaletteMode) => ({
+export const theme = createTheme({ palette: { primary: blue } });
+export const primaryColor = {
+    light: {
+        main: '#fff',
+    },
+    dark: {
+        main: '#371A45',
+    }
+};
+export const getDesignTokens = (mode: PaletteMode, ltr: boolean) => ({
     palette: {
-        mode,
+        ...(
+
+            ltr ?
+                {
+                    direction: 'ltr'
+
+                } : { direction: 'rtl' }
+        ),
         ...(mode === "light"
             ? {
                 // palette values for light mode
-                primary: amber,
+                primary: primaryColor.light,
                 divider: amber[200],
                 text: {
                     primary: grey[900],
@@ -19,19 +34,18 @@ export const getDesignTokens = (mode: PaletteMode) => ({
             }
             : {
                 // palette values for dark mode
-                primary: deepOrange,
+                primary: primaryColor.dark,
                 divider: deepOrange[700],
                 background: {
-                    default: deepOrange[900],
+                    default: primaryColor.dark.main,
                     paper: deepOrange[900],
                 },
                 text: {
                     primary: "#fff",
-                    secondary: grey[500],
+                    secondary: '#fff',
                 },
             }),
     },
 });
-
 
 export default theme;
