@@ -5,6 +5,7 @@ import { Animation } from '../animation/animation';
 import { motion } from 'framer-motion';
 import { Portfolio } from '../portfolio/portfolio';
 import { Link } from 'react-router-dom';
+import { useThemeContext } from '../../theme/ThemeContextProvider';
 export interface IntroProps {
     className?: string;
 }
@@ -14,6 +15,7 @@ export interface IntroProps {
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
 export const Intro = ({ className }: IntroProps) => {
+    const { mode } = useThemeContext();
     return (
         <div className={classNames(styles.root, className)}>
             <div>
@@ -34,7 +36,7 @@ export const Intro = ({ className }: IntroProps) => {
                         animate={{ pathLength: 1 }}
                         className={styles['path-line']}
                     />
-                    <defs>
+                    <defs>{mode === 'light' ?
                         <linearGradient
                             id="paint0_linear_6_519"
                             x1="202.5"
@@ -45,7 +47,19 @@ export const Intro = ({ className }: IntroProps) => {
                         >
                             <stop stopColor="#371a45" />
                             <stop offset="1" stopColor="#a15aca" />
+                        </linearGradient> :
+                        <linearGradient
+                            id="paint0_linear_6_519"
+                            x1="202.5"
+                            y1="2"
+                            x2="0.999995"
+                            y2="2"
+                            gradientUnits="userSpaceOnUse"
+                        >
+                            <stop stopColor="#fff" />
+                            <stop offset="1" stopColor="#fff" />
                         </linearGradient>
+                    }
                     </defs>
                 </motion.svg>
                 <h3 className={styles.subtitle}>Software engineer and designer</h3>
@@ -54,7 +68,11 @@ export const Intro = ({ className }: IntroProps) => {
                 Free lance providing services for programming and design context needs.
             </p>
             <Link
-                className={styles.letCollab}
+                className={
+                    mode === 'light' ?
+                        styles.letCollab :
+                        styles.letsCollabDark
+                }
                 to={'/contact'}
             >
                 <h3>Lets collaborate</h3><FaShuttleSpace className={styles.iconSend} />

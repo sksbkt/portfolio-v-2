@@ -1,4 +1,4 @@
-import { Button, Container, IconButton } from '@mui/material';
+import { Button, Container, IconButton, Typography } from '@mui/material';
 import { useThemeContext } from '../../theme/ThemeContextProvider';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
@@ -18,8 +18,9 @@ export const NightModeToggle = ({ className }: NightModeToggleProps) => {
                 {mode} mode {mode === 'dark' ? <DarkModeIcon /> : <LightModeIcon />}
             </IconButton>
             <Button variant='text' onClick={toggleLtr}>
-                {ltr ? 'EN' : 'FA'}
-
+                <Typography>
+                    {ltr ? 'EN' : 'FA'}
+                </Typography>
             </Button>
         </Container>
     );

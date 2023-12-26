@@ -1,90 +1,88 @@
 .App {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 6rem 2rem 2rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 6rem 2rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-*{
-    outline: none !important;
+* {
+  outline: none !important;
 }
 .logo {
-    padding: 1.25em;
-    will-change: filter;
-    transition: filter 300ms;
+  padding: 1.25em;
+  will-change: filter;
+  transition: filter 300ms;
 }
 
 .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #646cffaa);
 }
 
 .logo.react:hover {
-    filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
 .logo.ts:hover {
-    filter: drop-shadow(0 0 2em #3178c6aa);
+  filter: drop-shadow(0 0 2em #3178c6aa);
 }
 
 .logo.scss:hover {
-    filter: drop-shadow(0 0 2em #cc6698aa);
+  filter: drop-shadow(0 0 2em #cc6698aa);
 }
 
 @keyframes logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
 
-    to {
-        transform: rotate(360deg);
-    }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    a:nth-of-type(2) .logo {
-        animation: logo-spin infinite 20s linear;
-    }
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
 }
 
 .card {
-    padding: 2em;
+  padding: 2em;
 }
 
 .read-the-docs {
-    color: #888;
+  color: #888;
 }
 
 .title {
-    font-size: 3rem;
-    font-weight: 700;
-    padding: 0.5rem 0rem;
+  font-size: 3rem;
+  font-weight: 700;
+  padding: 0.5rem 0rem;
 }
 
 .subtitle {
-    font-weight: 500;
-    font-size: 1.5rem;
+  font-weight: 500;
+  font-size: 1.5rem;
 }
 
 .iconSend {
-    margin-left: 0.2rem;
+  margin-left: 0.2rem;
 }
 
-@media screen and (max-width:720px ) {
-    .App{
-        padding: 1rem 4%;
-    }
-    
+@media screen and (max-width: 720px) {
+  .App {
+    padding: 1rem 4%;
+  }
 }
 
-a{
-    text-decoration: none;
-    color: #494949;
-    transition: all 0.3s;
-    &:hover{
-        transform: translate(0, -2px);
-        filter: saturate(2);
-    }
-
+a {
+  text-decoration: none;
+  // color: #494949;
+  transition: all 0.3s;
+  &:hover {
+    transform: translate(0, -2px);
+    filter: saturate(2);
+  }
 }

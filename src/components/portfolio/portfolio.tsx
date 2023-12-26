@@ -9,6 +9,9 @@ import quanticShopImg from '../../assets/projects-img/quantic_shop_home.png';
 import quanticPromptopiaImg from '../../assets/projects-img/promptopia_quantic.png';
 import quanticdashboardImg from '../../assets/projects-img/quantic_dashboard.png';
 import quanticSwrtodoImg from '../../assets/projects-img/quantic_swrtodo.png';
+import { Link } from 'react-router-dom';
+import { Typography } from '@mui/material';
+import { useThemeContext } from '../../theme/ThemeContextProvider';
 
 export interface PortfolioProps {
     className?: string;
@@ -19,6 +22,7 @@ export interface PortfolioProps {
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
 export const Portfolio = ({ className }: PortfolioProps) => {
+    const { mode } = useThemeContext();
     return (
         <div className={classNames(styles.root, className)}>
             <div className={styles['portfolio-wrapper']}>
@@ -53,25 +57,25 @@ export const Portfolio = ({ className }: PortfolioProps) => {
                         </linearGradient>
                     </defs>
                 </motion.svg>
-                <p className={styles['portfolio-paragraph']}>
-                    I am a front-end developer with 5+ years of experience building user interfaces
-                    for websites and web applications using{' '}
-                    <span className={styles['portfolio-span']}> React and Next.js</span>. I have a
-                    deep understanding of both frameworks and I am proficient in using them to
-                    create fast, scalable, and SEO-friendly applications.
-                </p>
+                <Typography variant='body1' paragraph={true} className={styles['portfolio-paragraph']}>
+                    I am a front-end developer with 5+ years of experience building user interfaces for websites and web applications using <Typography className={styles['portfolio-span']}>React and Next.js</Typography>. I have a deep understanding of both frameworks and I am proficient in using them to create fast, scalable, and SEO-friendly applications.
+                </Typography>
                 <div className={styles['grid-items']}>
                     <div className={styles['grid-item']}>
                         <div className={styles['grid-img-div']}>
                             <img src={quanticShopImg} alt="" className={styles['grid-img']} />
                         </div>
-                        <a
+                        <Link
                             className={styles['visit-portfolio']}
-                            href="https://quantic-shop.netlify.app/"
+                            to="https://quantic-shop.netlify.app/"
                             target="_blank"
                         >
-                            <h4>Online shop</h4>
-                        </a>
+                            <h4>
+                                <Typography>
+                                    Online shop
+                                </Typography>
+                            </h4>
+                        </Link>
                     </div>
                     <div className={styles['grid-item']}>
                         <div className={styles['grid-img-div']}>
@@ -82,7 +86,9 @@ export const Portfolio = ({ className }: PortfolioProps) => {
                             href="https://promptopia-quantic.vercel.app/"
                             target="_blank"
                         >
-                            <h4>Blog</h4>
+                            <Typography>
+                                <h4>Blog</h4>
+                            </Typography>
                         </a>
                     </div>
                     <div className={styles['grid-item']}>
@@ -94,7 +100,11 @@ export const Portfolio = ({ className }: PortfolioProps) => {
                             href="https://quantic-dashboard.vercel.app/"
                             target="_blank"
                         >
-                            <h4>Dashboard</h4>
+                            <h4>
+                                <Typography>
+                                    Dashboard
+                                </Typography>
+                            </h4>
                         </a>
                     </div>
                     <div className={styles['grid-item']}>
@@ -106,21 +116,28 @@ export const Portfolio = ({ className }: PortfolioProps) => {
                             href="https://quantic-swrtodo.netlify.app/"
                             target="_blank"
                         >
-                            <h4>SWR todo</h4>
+                            <h4>
+                                <Typography>
+                                    SWR todo
+                                </Typography>
+                            </h4>
                         </a>
                     </div>
                 </div>
                 <div className={styles.socials}>
                     <a href="https://github.com/sksbkt" target="_blank">
-                        <FaGithub className={styles['social-svg']} />
+                        <FaGithub
+                            className={styles[mode === 'light' ? 'social-svg' : 'social-svg-dark']}
+                        />
                     </a>
-                    <a href="https://github.com/sksbkt" target="_blank">
-                        <FaInstagram href="/" className={styles['social-svg']} />
+                    <a href="/" target="_blank">
+                        <FaInstagram
+                            className={styles[mode === 'light' ? 'social-svg' : 'social-svg-dark']}
+                        />
                     </a>
-                    <a href="https://github.com/sksbkt" target="_blank">
+                    <a href="https://www.linkedin.com/in/ali-khoshbakht/" target="_blank">
                         <FaLinkedin
-                            href="https://www.linkedin.com/in/ali-khoshbakht/"
-                            className={styles['social-svg']}
+                            className={styles[mode === 'light' ? 'social-svg' : 'social-svg-dark']}
                         />
                     </a>
                 </div>

@@ -1,74 +1,80 @@
+.root {
+}
 
-.root {}
-
-.portfolio-wrapper {}
-
-.portfolio-span {}
+.portfolio-wrapper {
+}
 
 .portfolio-span {
-    color: #371A45;
-    font-weight: 600;
+}
+
+.portfolio-span {
+  font-weight: 900;
+  display: inline;
 }
 
 .portfolio-paragraph {
-    text-align: justify;
+  text-align: justify;
 }
 
 .grid-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 12px;
-    margin-top: 2em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 12px;
+  margin-top: 2em;
 }
 
 .grid-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    gap: 12px;
-    min-width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  gap: 12px;
+  min-width: auto;
 }
+
 .social-svg,
 .visit-portfolio {
-    text-decoration: none !important;
-    color: #494949 !important;
+  text-decoration: none !important;
 }
 
 .grid-img {
-
-    object-fit: cover;
-    width: 100%;
+  object-fit: cover;
+  width: 100%;
 }
 
 .grid-img-div {
-    border-radius: 12px;
-    box-shadow: 0 0 7px #BCBCBC;
-    object-fit: cover;
-    overflow: hidden;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    aspect-ratio: 4/3;
-    max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 7px #bcbcbc;
+  object-fit: cover;
+  overflow: hidden;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  aspect-ratio: 4/3;
+  max-width: 100%;
 }
 
 .socials {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    gap: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  gap: 10px;
 }
 
+.social-svg-dark,
 .social-svg {
-    fill: red($color: #371A45);
-    width: 1.5rem;
-    height: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
-
+.social-svg {
+  color: #371a45;
+}
+.social-svg-dark {
+  color: white;
+}
 .gridItemTitle {
-    text-decoration: none;
+  text-decoration: none;
 }
