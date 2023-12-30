@@ -64,7 +64,7 @@ export const Intro = ({ className }: IntroProps) => {
                 </motion.svg>
                 <h3 className={styles.subtitle}>Software engineer and designer</h3>
             </div>
-            <p className={styles.desription}>
+            <p className={styles.description}>
                 Free lance providing services for programming and design context needs.
             </p>
             <Link

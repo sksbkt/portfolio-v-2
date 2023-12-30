@@ -20,6 +20,7 @@
   background-repeat: repeat;
   display: flex;
 }
+
 .letsCollabDark,
 .letCollab {
   & > * {
@@ -34,10 +35,13 @@
   align-items: center;
   align-content: center;
   gap: 5px;
+  margin-top: 20px;
 }
+
 .letCollab {
   background-image: linear-gradient(90deg, #5f2d77 0%, #161616 100%);
 }
+
 .letsCollabDark {
   background-image: linear-gradient(90deg, #ecc3ff 0%, #5f2d77 100%);
 }
@@ -53,7 +57,7 @@
   margin-top: 0rem;
 }
 
-.desription {
+.description {
   margin-top: 0.6rem;
 }
 

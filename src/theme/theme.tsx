@@ -13,70 +13,138 @@ export const primaryColor = {
     }
 };
 export const getDesignTokens = (mode: PaletteMode, ltr: boolean) => createTheme({
-    palette: {
-        primary: { main: '#fff' },
-        secondary: { main: '#371A45' },
-        divider: '#d9d9d9',
-        text: {
-            primary: '#fff',
-            secondary: yellow[100]
+
+    ...(mode === 'light' ? {
+        palette: {
+
+            primary: { main: '#371A45' },
+            secondary: { main: '#fff' },
+            divider: '#d9d9d9',
+            text: {
+                primary: '#371A45',
+                secondary: yellow[100]
+            },
+            background: {
+                default: '#fff',
+                paper: red[100]
+            },
         },
-        background: {
-            default: '#371A45',
-            paper: red[100]
+        typography: {
+            body1: {
+                color: '#371A45'
+            },
+            body2: {
+                color: '#371A45'
+            },
         },
-    },
-    typography: {
-        body1: {
-            color: '#fff'
-        },
-        body2: {
-            color: '#fff'
-        },
-    },
-    components: {
-        MuiLink: {
-            styleOverrides: {
-                root: {
-                    color: yellow[500]
+        components: {
+            MuiLink: {
+                styleOverrides: {
+                    root: {
+                        color: yellow[500]
+                    }
                 }
-            }
+            },
+        }
+    } : {
+        palette: {
+
+            primary: { main: '#fff' },
+            secondary: { main: '#371A45' },
+            divider: '#d9d9d9',
+            text: {
+                primary: '#fff',
+                secondary: yellow[100]
+            },
+            background: {
+                default: '#371A45',
+                paper: red[100]
+            },
         },
-    }
-    // palette: {
-    //     ...(
-
-    //         ltr ?
-    //             {
-    //                 direction: 'ltr'
-
-    //             } : { direction: 'rtl' }
-    //     ),
-    //     ...(mode === "light"
-    //         ? {
-    //             // palette values for light mode
-    //             primary: primaryColor.light,
-    //             divider: amber[200],
-
-    //             text: {
-    //                 primary: grey[900],
-    //                 secondary: grey[800],
-    //             },
-    //         }
-    //         : {
-    //             // palette values for dark mode
-    //             primary: primaryColor.dark,
-    //             divider: deepOrange[700],
-    //             background: {
-    //                 default: primaryColor.dark.main,
-    //                 paper: deepOrange[900],
-    //             },
-    //             text: {
-    //                 primary: "#fff",
-    //                 secondary: '#fff',
-    //             },
-    //         }),
-    // },
+        typography: {
+            body1: {
+                color: '#fff'
+            },
+            body2: {
+                color: '#fff'
+            },
+        },
+        components: {
+            MuiLink: {
+                styleOverrides: {
+                    root: {
+                        color: yellow[500]
+                    }
+                }
+            }, MuiTextField: {
+                styleOverrides: {
+                    root: {
+                        border: 0,
+                        backgroundColor: '#371A45'
+                    }
+                }
+            }, MuiCssBaseline: {
+                styleOverrides: {
+                    body: {
+                        scrollbarColor: "#6b6b6b #2b2b2b",
+                        "&::-webkit-scrollbar, & *::-webkit-scrollbar": {
+                            backgroundColor: "#2b2b2b",
+                            borderRadius: 8,
+                        },
+                        "&::-webkit-scrollbar-thumb, & *::-webkit-scrollbar-thumb": {
+                            borderRadius: 8,
+                            backgroundColor: "#6b6b6b",
+                            minHeight: 24,
+                            border: "3px solid #2b2b2b",
+                        },
+                        "&::-webkit-scrollbar-thumb:focus, & *::-webkit-scrollbar-thumb:focus": {
+                            backgroundColor: "#959595",
+                        },
+                        "&::-webkit-scrollbar-thumb:active, & *::-webkit-scrollbar-thumb:active": {
+                            backgroundColor: "#959595",
+                        },
+                        "&::-webkit-scrollbar-thumb:hover, & *::-webkit-scrollbar-thumb:hover": {
+                            backgroundColor: "#959595",
+                        },
+                        "&::-webkit-scrollbar-corner, & *::-webkit-scrollbar-corner": {
+                            backgroundColor: "#2b2b2b",
+                        },
+                    },
+                },
+            },
+        }
+    }),
+    ...({
+        components: {
+            MuiCssBaseline: {
+                styleOverrides: {
+                    body: {
+                        scrollbarColor: "#6b6b6b #2b2b2b",
+                        "&::-webkit-scrollbar, & *::-webkit-scrollbar": {
+                            backgroundColor: "#2b2b2b",
+                            borderRadius: 8,
+                        },
+                        "&::-webkit-scrollbar-thumb, & *::-webkit-scrollbar-thumb": {
+                            borderRadius: 8,
+                            backgroundColor: "#6b6b6b",
+                            minHeight: 24,
+                            border: "3px solid #2b2b2b",
+                        },
+                        "&::-webkit-scrollbar-thumb:focus, & *::-webkit-scrollbar-thumb:focus": {
+                            backgroundColor: "#959595",
+                        },
+                        "&::-webkit-scrollbar-thumb:active, & *::-webkit-scrollbar-thumb:active": {
+                            backgroundColor: "#959595",
+                        },
+                        "&::-webkit-scrollbar-thumb:hover, & *::-webkit-scrollbar-thumb:hover": {
+                            backgroundColor: "#959595",
+                        },
+                        "&::-webkit-scrollbar-corner, & *::-webkit-scrollbar-corner": {
+                            backgroundColor: "#2b2b2b",
+                        },
+                    },
+                },
+            },
+        }
+    })
 });
-
-// export default theme;

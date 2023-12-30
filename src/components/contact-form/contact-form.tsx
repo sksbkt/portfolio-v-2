@@ -4,7 +4,8 @@ import styles from './contact-form.module.scss';
 import formSubmittedAnimation from '../../assets/form-sumbit_1.json';
 import React, { useEffect, useState } from 'react';
 import Lottie, { LottiePlayer } from 'lottie-react';
-import { Button } from '@mui/material';
+import { Button, Input, TextField, createTheme } from '@mui/material';
+import { useThemeContext } from '../../theme/ThemeContextProvider';
 
 export interface ContactFormProps {
     className?: string;
@@ -15,6 +16,16 @@ export interface ContactFormProps {
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
 export const ContactForm = ({ className }: ContactFormProps) => {
+
+
+    const theme = createTheme({
+        components: {
+
+        },
+    });
+
+    const { mode } = useThemeContext();
+    document.body.style.setProperty('$sss', '$sss solid #bcbcbc');
     const [query, setQuery] = useState({
         name: '',
         email: '',
@@ -56,35 +67,40 @@ export const ContactForm = ({ className }: ContactFormProps) => {
             <div className={styles.formWrapper}>
                 <h2 className={styles.formTitle}>Contact us</h2>
                 <form onSubmit={formSubmit} className={styles.form}>
-                    <label className={styles.formLabel}>Name:</label>
-                    <input
-                        type="text"
-                        name="name"
+                    <TextField
+                        label='Name'
+                        name='name'
+                        variant='outlined'
                         onChange={handleParam}
                         value={query.name}
                         className={styles.formInput}
+                        focused
                     />
-                    <label className={styles.formLabel}>Email:</label>
-                    <input
+                    <TextField
+                        label="Email"
                         type="email"
                         name="email"
                         onChange={handleParam}
                         value={query.email}
+                        focused
                         className={styles.formInput}
                     />
-                    <label className={styles.formLabel}>Message:</label>
-                    <div className={classNames(styles.formInputMsgWrapper, styles.formInput)}>
-                        <textarea
-                            name="message"
-                            onChange={handleParam}
-                            value={query.message}
-                            className={classNames(styles.formInputMsg)}
-                        />
-                    </div>
+
+                    <TextField
+                        name="message"
+                        label="Message"
+                        onChange={handleParam}
+                        value={query.message}
+                        multiline={true}
+                        rows={4}
+                        inputProps={{}}
+                        className={classNames(styles.formInputMsg, styles.formInput)}
+                        focused
+                    />
+
                     <Button type='submit' variant='outlined'>
                         Submit
                     </Button>
-                    {/* <input type="submit" value="Submit" className={styles.formBtn} /> */}
                 </form>
             </div>
         }
