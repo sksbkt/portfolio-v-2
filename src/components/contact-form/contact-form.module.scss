@@ -34,16 +34,23 @@
   font-size: 14px;
   font-weight: 500;
 }
-
+// ? like this we can style MUI components in Style sheet
 .formInput {
-  border-radius: 5px;
-  border: 2px solid #bcbcbc;
-  margin-top: 10px;
-  transition: all 0.4s;
-  width: auto;
-  display: block;
-  flex-direction: row;
-  justify-content: start;
+  :global {
+    .MuiOutlinedInput-root {
+      // color: blue;
+      fieldset {
+        border-color: red; // Change border color here
+        border-radius: var(--border-radius); // Change border radius here
+      }
+      &:hover fieldset {
+        border-color: blue; // Change hover border color here
+      }
+      &.Mui-focused fieldset {
+        border-color: var(--main-color); // Change focused border color here
+      }
+    }
+  }
 }
 
 .formInput:focus {
@@ -54,7 +61,7 @@
 .formBtn {
   padding: 0.8rem 2.8rem;
   color: #fff;
-  background-color: #5f2d77;
+  background-color: var(--main-color);
   border-radius: 10px;
   font-weight: 700;
   margin: 10px;
@@ -64,13 +71,7 @@
 }
 
 .formInputMsg {
-  //   border: transparent;
-  width: 50rem;
-  //   min-height: 5rem;
-  //   max-height: 100rem;
-  //   resize: vertical;
-  //   overflow-y: scroll;
-  //   outline: none;
+  width: 50em;
 }
 
 .formInputMsg::-webkit-resizer {
@@ -85,14 +86,14 @@
 }
 
 .formInputMsg::-webkit-scrollbar-thumb:hover {
-  background-color: rgb(73, 73, 73);
+  background-color: var(--main-text-color);
 }
 
 .formInputMsg::-webkit-scrollbar-thumb {
-  background-color: rgb(161, 161, 161);
+  background-color: var(--secondary-text-color);
   border-radius: 5px;
 }
 
 .formInputMsgWrapper {
-  background-color: #fff !important;
+  background-color: var(--secondary-color);
 }

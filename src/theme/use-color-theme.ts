@@ -1,11 +1,11 @@
-import { PaletteMode, createTheme } from '@mui/material';
-import { useMemo, useState } from 'react';
-import { getDesignTokens } from './theme';
+import { PaletteMode, createTheme } from "@mui/material";
+import { useMemo, useState } from "react";
+import { getDesignTokens } from "./theme";
 export const useColorTheme = () => {
-    const [mode, setMode] = useState<PaletteMode>('light');
+    const [mode, setMode] = useState<PaletteMode>("light");
     const [ltr, setLtr] = useState<boolean>(true);
 
-    const toggleColorMode = () => setMode((preMode) => (preMode === 'light' ? 'dark' : 'light'));
+    const toggleColorMode = () => setMode((preMode) => (preMode === "light" ? "dark" : "light"));
     const toggleLtr = () => setLtr((preMode) => !preMode);
 
     // const modifiedTheme = useMemo(
@@ -25,7 +25,6 @@ export const useColorTheme = () => {
     //     toggleColorMode,
     // };
     const modifiedTheme = useMemo(() => createTheme(getDesignTokens(mode, ltr)), [mode, ltr]);
-    console.log(getDesignTokens(mode, ltr));
 
     return {
         theme: modifiedTheme,

@@ -7,9 +7,19 @@ import { ThemeProvider } from '@mui/material/styles';
 
 import { useThemeContext } from './theme/ThemeContextProvider';
 import CssBaseline from '@mui/material/CssBaseline';
+import { useEffect } from 'react';
+import { colorChangeHelper, colorTheme } from './theme/theme';
+
 
 function App() {
-    const { theme, ltr } = useThemeContext();
+
+    const { mode, theme, ltr } = useThemeContext();
+
+    useEffect(() => {
+        //? like this we can scss variables programmatically 
+        colorChangeHelper(mode);
+    }, [mode]);
+
 
     document.dir = ltr ? 'ltr' : 'rtl';
     return (
@@ -27,3 +37,7 @@ function App() {
 }
 
 export default App;
+
+// * Global variables
+export const root = document.documentElement;
+

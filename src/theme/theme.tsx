@@ -1,6 +1,7 @@
 import { Theme, createTheme } from "@mui/material/styles";
 import { amber, blue, deepOrange, grey, red, yellow } from "@mui/material/colors";
 import { PaletteMode, Typography } from "@mui/material";
+import { root } from "../App";
 // import { Palette } from "@mui/icons-material";
 
 // export const theme = createTheme({ palette: { primary: yellow } });
@@ -148,3 +149,20 @@ export const getDesignTokens = (mode: PaletteMode, ltr: boolean) => createTheme(
         }
     })
 });
+
+export const colorTheme = {
+    dark: {
+        mainColor: '#fff',
+        secondaryColor: '#5f2d77',
+    },
+    light: {
+        mainColor: '#5f2d77',
+        secondaryColor: '#fff',
+    }
+}
+
+export const colorChangeHelper = (mode: string) => {
+    //? like this we can scss variables programmatically 
+    root?.style.setProperty('--main-color', mode === 'light' ? colorTheme.light.mainColor : colorTheme.dark.mainColor);
+    root?.style.setProperty('--secondary-color', mode === 'light' ? colorTheme.light.secondaryColor : colorTheme.dark.secondaryColor);
+}

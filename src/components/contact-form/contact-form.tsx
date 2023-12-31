@@ -3,9 +3,10 @@ import styles from './contact-form.module.scss';
 
 import formSubmittedAnimation from '../../assets/form-sumbit_1.json';
 import React, { useEffect, useState } from 'react';
-import Lottie, { LottiePlayer } from 'lottie-react';
-import { Button, Input, TextField, createTheme } from '@mui/material';
+import Lottie from 'lottie-react';
+import { Button, TextField } from '@mui/material';
 import { useThemeContext } from '../../theme/ThemeContextProvider';
+import { root } from '../../App';
 
 export interface ContactFormProps {
     className?: string;
@@ -17,15 +18,16 @@ export interface ContactFormProps {
  */
 export const ContactForm = ({ className }: ContactFormProps) => {
 
+    // const { mode } = useThemeContext();
+    // //? like this we can scss variables programmatically 
+    // useEffect(() => {
+    //     root?.style.setProperty("--main-color",
+    //         mode === 'light' ? '#5f2d77' : '#fff'
+    //     );
 
-    const theme = createTheme({
-        components: {
+    // }, [mode]);
 
-        },
-    });
 
-    const { mode } = useThemeContext();
-    document.body.style.setProperty('$sss', '$sss solid #bcbcbc');
     const [query, setQuery] = useState({
         name: '',
         email: '',
