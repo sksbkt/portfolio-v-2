@@ -17,6 +17,7 @@ export interface NavBarProps {
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
 export const NavBar = ({ className }: NavBarProps) => {
+    const { locale } = useThemeContext();
     const { mode } = useThemeContext();
     return (
         <div className={classNames(styles.root, className, styles.nav)}>
@@ -24,7 +25,7 @@ export const NavBar = ({ className }: NavBarProps) => {
                 <div className={styles.logoWrapper}>
                     <img src={mode === 'light' ? logo : logoDark} alt="" />
                     <Typography>
-                        Quantic Machines
+                        {locale.COMPANY_NAME}
                     </Typography>
                 </div>
             </Link>
@@ -34,14 +35,14 @@ export const NavBar = ({ className }: NavBarProps) => {
                 <li>
                     <Link to={'/'}>
                         <Typography>
-                            portfolio
+                            {locale.PORTFOLIO}
                         </Typography>
                     </Link>
                 </li>
                 <li>
                     <Link to={'/contact'}>
                         <Typography>
-                            Contact
+                            {locale.CONTACT}
                         </Typography>
                     </Link>
                 </li>

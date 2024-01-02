@@ -2,11 +2,10 @@ import classNames from 'classnames';
 import styles from './contact-form.module.scss';
 
 import formSubmittedAnimation from '../../assets/form-sumbit_1.json';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Lottie from 'lottie-react';
 import { Button, TextField } from '@mui/material';
 import { useThemeContext } from '../../theme/ThemeContextProvider';
-import { root } from '../../App';
 
 export interface ContactFormProps {
     className?: string;
@@ -17,7 +16,7 @@ export interface ContactFormProps {
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
 export const ContactForm = ({ className }: ContactFormProps) => {
-
+    const { locale } = useThemeContext();
     // const { mode } = useThemeContext();
     // //? like this we can scss variables programmatically 
     // useEffect(() => {
@@ -67,10 +66,10 @@ export const ContactForm = ({ className }: ContactFormProps) => {
     return <div className={classNames(styles.root, className)}>
         {submitted ? <Lottie animationData={formSubmittedAnimation} /> :
             <div className={styles.formWrapper}>
-                <h2 className={styles.formTitle}>Contact us</h2>
+                <h2 className={styles.formTitle}>{locale.CONTACT_US}</h2>
                 <form onSubmit={formSubmit} className={styles.form}>
                     <TextField
-                        label='Name'
+                        label={locale.label.NAME}
                         name='name'
                         variant='outlined'
                         onChange={handleParam}
@@ -79,7 +78,7 @@ export const ContactForm = ({ className }: ContactFormProps) => {
                         focused
                     />
                     <TextField
-                        label="Email"
+                        label={locale.label.EMAIL}
                         type="email"
                         name="email"
                         onChange={handleParam}
@@ -90,7 +89,7 @@ export const ContactForm = ({ className }: ContactFormProps) => {
 
                     <TextField
                         name="message"
-                        label="Message"
+                        label={locale.label.MESSAGE}
                         onChange={handleParam}
                         value={query.message}
                         multiline={true}
@@ -101,7 +100,7 @@ export const ContactForm = ({ className }: ContactFormProps) => {
                     />
 
                     <Button type='submit' variant='outlined'>
-                        Submit
+                        {locale.button.SUBMIT}
                     </Button>
                 </form>
             </div>

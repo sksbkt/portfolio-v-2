@@ -2,19 +2,24 @@ import { Theme, createTheme } from "@mui/material/styles";
 import { amber, blue, deepOrange, grey, red, yellow } from "@mui/material/colors";
 import { PaletteMode, Typography } from "@mui/material";
 import { root } from "../App";
+
+import createCache from '@emotion/cache';
+import rtlPlugin from 'stylis-plugin-rtl';
+
+import { prefixer } from 'stylis';
 // import { Palette } from "@mui/icons-material";
 
 // export const theme = createTheme({ palette: { primary: yellow } });
-export const primaryColor = {
-    light: {
-        main: '#371A45',
-    },
-    dark: {
-        main: '#fff',
-    }
-};
+// export const primaryColor = {
+//     light: {
+//         main: '#371A45',
+//     },
+//     dark: {
+//         main: '#fff',
+//     }
+// };
 export const getDesignTokens = (mode: PaletteMode, ltr: boolean) => createTheme({
-
+    direction: ltr ? 'ltr' : 'rtl',
     ...(mode === 'light' ? {
         palette: {
 
@@ -160,7 +165,16 @@ export const colorTheme = {
         secondaryColor: '#fff',
     }
 }
-
+// ? @emotion caches
+// ? RTL/LTR caches
+export const cacheLtr = createCache({
+    key: 'muiltr',
+});
+export const cacheRtl = createCache({
+    key: 'muirtl',
+    stylisPlugins: [prefixer, rtlPlugin],
+});
+// ? HELPERS
 export const colorChangeHelper = (mode: string) => {
     //? like this we can scss variables programmatically 
     root?.style.setProperty('--main-color', mode === 'light' ? colorTheme.light.mainColor : colorTheme.dark.mainColor);

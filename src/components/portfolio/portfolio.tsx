@@ -22,11 +22,12 @@ export interface PortfolioProps {
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
 export const Portfolio = ({ className }: PortfolioProps) => {
-    const { mode } = useThemeContext();
+    const { mode, locale } = useThemeContext();
+
     return (
         <div className={classNames(styles.root, className)}>
             <div className={styles['portfolio-wrapper']}>
-                <h3 className={styles.h3}>My Portfolio</h3>
+                <h3 className={styles.h3}>{locale.PORTFOLIO_TITLE}</h3>
                 <motion.svg
                     height="4"
                     viewBox="0 0 204 4"
@@ -55,10 +56,11 @@ export const Portfolio = ({ className }: PortfolioProps) => {
                             <stop stopColor="#371A45" />
                             <stop offset="1" stopColor="#a15aca" />
                         </linearGradient>
-                    </defs>
+                    </defs>,locale
+
                 </motion.svg>
                 <Typography variant='body1' paragraph={true} className={styles['portfolio-paragraph']}>
-                    I am a front-end developer with 5+ years of experience building user interfaces for websites and web applications using <Typography className={styles['portfolio-span']}>React and Next.js</Typography>. I have a deep understanding of both frameworks and I am proficient in using them to create fast, scalable, and SEO-friendly applications.
+                    {locale.PORTFOLIO_DESC}
                 </Typography>
                 <div className={styles['grid-items']}>
                     <div className={styles['grid-item']}>

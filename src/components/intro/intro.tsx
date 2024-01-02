@@ -15,11 +15,13 @@ export interface IntroProps {
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
 export const Intro = ({ className }: IntroProps) => {
-    const { mode } = useThemeContext();
+    const { mode, locale } = useThemeContext();
     return (
         <div className={classNames(styles.root, className)}>
             <div>
-                <h2 className={styles.title}>Ali Khoshbakht</h2>
+                <h2 className={styles.title}>
+                    {locale.DEV_NAME}
+                </h2>
                 <motion.svg
                     height="4"
                     viewBox="0 0 204 4"
@@ -62,10 +64,10 @@ export const Intro = ({ className }: IntroProps) => {
                     }
                     </defs>
                 </motion.svg>
-                <h3 className={styles.subtitle}>Software engineer and designer</h3>
+                <h3 className={styles.subtitle}>{locale.DEV_OCCUPATION}</h3>
             </div>
             <p className={styles.description}>
-                Free lance providing services for programming and design context needs.
+                {locale.DEV_OCU_DESC}
             </p>
             <Link
                 className={
@@ -75,7 +77,7 @@ export const Intro = ({ className }: IntroProps) => {
                 }
                 to={'/contact'}
             >
-                <h3>Lets collaborate</h3><FaShuttleSpace className={styles.iconSend} />
+                <h3>{locale.button.LETS_COLLABORATE}</h3><FaShuttleSpace className={styles.iconSend} />
             </Link>
             <Animation />
             <Portfolio />

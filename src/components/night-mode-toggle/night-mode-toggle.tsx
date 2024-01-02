@@ -11,13 +11,24 @@ export interface NightModeToggleProps {
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
 export const NightModeToggle = ({ className }: NightModeToggleProps) => {
-    const { mode, ltr, toggleColorMode, toggleLtr } = useThemeContext();
+    const { mode, ltr, toggleColorMode, toggleLtr, locale } = useThemeContext();
     return (
         <Container sx={{ display: 'flex', flexDirection: 'row' }}>
             <IconButton sx={{ ml: 1, borderWidth: 1, fontSize: 12, borderRadius: 10, outline: 'none', gap: 1 }} onClick={toggleColorMode} color='inherit'>
-                {mode} mode {mode === 'dark' ? <DarkModeIcon /> : <LightModeIcon />}
+                {mode === 'light' ?
+                    <>
+                        {locale.theme.LIGHT}
+                        <LightModeIcon />
+                    </>
+                    : <>
+                        {locale.theme.DARK}
+                        <DarkModeIcon />
+                    </>
+                }
             </IconButton>
-            <Button variant='text' onClick={toggleLtr}>
+            <Button variant='text' onClick={() => {
+                toggleLtr();
+            }}>
                 <Typography>
                     {ltr ? 'EN' : 'FA'}
                 </Typography>
